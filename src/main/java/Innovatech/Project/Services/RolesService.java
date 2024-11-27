@@ -14,7 +14,6 @@ public class RolesService {
     @Autowired
     private RolesRepositorio rolesRepositorio;
 
-
     public Rol guardarRol(Rol rol){
         return rolesRepositorio.save(rol);
     }
