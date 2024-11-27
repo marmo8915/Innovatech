@@ -27,4 +27,19 @@ public class RolesService {
         return rolesRepositorio.findAll();
     }
 
+    public void eliminarRol(Integer id){
+        if (rolesRepositorio.existsById(id)) {
+            rolesRepositorio.deleteById(id);
+        } else {
+            throw new RuntimeException("Rol con ID " + id + " no encontrado");
+        }
+    }
+
+    public Optional<Rol> actualizarRol(Integer id, Rol rol) {
+        return rolesRepositorio.findById(id).map(e -> {
+            e.setName(rol.getName());
+            return rolesRepositorio.save(e);
+        });
+    }
+
 }

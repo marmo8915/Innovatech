@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/rol")
+@RequestMapping("/Rol")
 public class RolController {
 
     @Autowired
@@ -36,5 +36,17 @@ public class RolController {
     public  ResponseEntity<List<Rol>> obtenerTodos(){
         List<Rol> rol = rolesService.consultarRol();
         return  new ResponseEntity<>(rol, HttpStatus.OK);
+    }
+
+    @DeleteMapping("{id}")
+    public  ResponseEntity<String> eliminarRol(@PathVariable int id){
+        rolesService.eliminarRol(id);
+        return  new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PutMapping("{id}")
+    public ResponseEntity<Rol> actualizarRol(@PathVariable int id, @RequestBody Rol rol){
+        Optional<Rol> update = rolesService.actualizarRol(id, rol);
+        return update.map(ResponseEntity::ok).orElseGet(()->ResponseEntity.notFound().build());
     }
 }
