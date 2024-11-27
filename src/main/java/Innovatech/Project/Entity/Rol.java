@@ -2,6 +2,8 @@ package Innovatech.Project.Entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name="Rol")
 public class Rol {
@@ -11,14 +13,34 @@ public class Rol {
     private int id;
 
     @Column(nullable = false)
-    private Roles nombre;
+    @Enumerated(EnumType.STRING)
+    private Roles name;
+
+    @OneToMany(targetEntity = Usuario.class,fetch = FetchType.LAZY, mappedBy = "id_rol")
+    private List<Usuario> usuario;
 
     public  Rol(){
 
     }
 
-    public Rol(int id, Roles nombre) {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
         this.id = id;
-        this.nombre = nombre;
+    }
+
+    public Roles getName() {
+        return name;
+    }
+
+    public void setName(Roles name) {
+        this.name = name;
+    }
+
+    public Rol(int id, Roles name) {
+        this.id = id;
+        this.name = name;
     }
 }
