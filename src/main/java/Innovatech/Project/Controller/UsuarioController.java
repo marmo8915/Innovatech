@@ -1,5 +1,6 @@
 package Innovatech.Project.Controller;
 
+import Innovatech.Project.DTO.EmprendimientoDTO;
 import Innovatech.Project.Entity.Usuario;
 import Innovatech.Project.Services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,5 +45,16 @@ public class UsuarioController {
     public ResponseEntity<Usuario> actualizar(@PathVariable int id, @RequestBody Usuario usuario){
         Optional<Usuario> update = usuarioService.actualizar(id, usuario);
         return update.map(ResponseEntity::ok).orElseGet(()->ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/nombres-modificados")
+    public List<Object[]> obtenerUsuariosConNombresModificados() {
+        return usuarioService.obtenerUsuariosConNombreModificado();
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200") // Permite solicitudes desde localhost:4200
+    @GetMapping("/getInfoUsuario/{email}/{pass}")
+    public List<Object[]> getInfoUsuario(@PathVariable String email, @PathVariable String pass) {
+        return usuarioService.obtenerUsuarioPorCredenciales(email, pass);
     }
 }

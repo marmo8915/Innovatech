@@ -35,15 +35,6 @@ public class Usuario {
     @OneToMany(targetEntity = Emprendimiento.class,fetch = FetchType.LAZY, mappedBy = "id_usuario")
     private List<Emprendimiento> emprendimientos;
 
-    @OneToMany(targetEntity = Reaccion.class,fetch = FetchType.LAZY, mappedBy = "id_usuario")
-    private List<Reaccion> reaccions;
-
-    @OneToMany(targetEntity = Evento.class,fetch = FetchType.LAZY, mappedBy = "id_usuario")
-    private List<Evento> eventos;
-
-    @OneToMany(targetEntity = usuario_evento.class,fetch = FetchType.LAZY, mappedBy = "id_usuario")
-    private List<usuario_evento> usuarioEventos;
-
     public int getId() {
         return id;
     }
@@ -98,6 +89,9 @@ public class Usuario {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public Usuario() {
     }
 
     public Usuario(int id, String telefono, String nombre, String apellido, Rol id_rol, String email, String password) {

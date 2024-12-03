@@ -57,4 +57,12 @@ public class UsuarioService {
             return usuarioRepository.save(e);
         });
     }
+
+    public List<Object[]> obtenerUsuariosConNombreModificado() {
+        return usuarioRepository.findUsuariosConNombreModificado();
+    }
+
+    public List<Object[]> obtenerUsuarioPorCredenciales(String email, String password) {
+        return usuarioRepository.findUsuariosByEmailAndPassword(email, password);
+    }
 }

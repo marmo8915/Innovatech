@@ -1,0 +1,42 @@
+<div class="divUsuario">
+  <span><strong>Usuario:</strong> {{ usuarioName }}</span>
+</div>
+<div class="table-container">
+  <div class="row">
+    <div class="col">
+      <h4>Emprendimientos</h4>
+
+      <table class="styled-table table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">NIT</th>
+            <th scope="col">Matricula</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Razon Social</th>
+            <th scope="col">Ciudad</th>
+            <th scope="col">Fecha Creacion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let due of objectos">
+            <th scope="row">{{ due.nit }}</th>
+            <th scope="row">{{ due.matricula }}</th>
+            <th scope="row">{{ due.nombre }}</th>
+            <th scope="row">{{ due.razonSocial }}</th>
+            <th scope="row">{{ due.ciudad }}</th>
+            <th scope="row">
+              {{ due.fechaCreacion | date : "yyyy-MM-dd HH:mm:ss" }}
+            </th>
+          </tr>
+        </tbody>
+      </table>
+      <button
+        type="button"
+        class="btn btn-primary"
+        routerLink="/createEmprendimiento"
+      >
+        Crear
+      </button>
+    </div>
+  </div>
+</div>

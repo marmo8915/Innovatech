@@ -1,7 +1,6 @@
 package Innovatech.Project.Services;
 
 import Innovatech.Project.Entity.Ciudad;
-import Innovatech.Project.Entity.Rol;
 import Innovatech.Project.Repositorio.CiudadRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

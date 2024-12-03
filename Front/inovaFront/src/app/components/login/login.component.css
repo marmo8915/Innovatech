@@ -1,0 +1,104 @@
+/* Fondo de la página */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #6a11cb, #2575fc);
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  margin: 0;
+}
+
+/* Tarjeta de login */
+.login-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  color: #333;
+  text-align: center;
+}
+
+/* Títulos */
+h2 {
+  margin-bottom: 0.5rem;
+  font-size: 24px;
+  color: #333;
+}
+
+.subtitle {
+  margin-bottom: 2rem;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Campos de entrada */
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #f9f9f9;
+}
+
+.form-control:focus {
+  border-color: #6a11cb;
+  outline: none;
+  box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+}
+
+/* Botón */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(to right, #5c0db8, #1e63d1);
+}
+
+.btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Pie de página */
+.footer {
+  margin-top: 1.5rem;
+  font-size: 14px;
+}
+
+.footer a {
+  color: #6a11cb;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}

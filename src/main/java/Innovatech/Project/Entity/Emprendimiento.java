@@ -14,10 +14,13 @@ public class Emprendimiento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private int NIT;
 
     @Column(nullable = false)
+    private String nombre;
+
+    @Column(nullable = true)
     private  int matricula;
 
     private Date fecha_creacion;
@@ -34,11 +37,18 @@ public class Emprendimiento {
     @JsonIgnore
     private  Usuario id_usuario;
 
-    @OneToMany(targetEntity = Reaccion.class,fetch = FetchType.LAZY, mappedBy = "id_emprendimiento")
-    private List<Reaccion> reaccions;
 
-    @OneToMany(targetEntity = Emprendimiento_evento.class,fetch = FetchType.LAZY, mappedBy = "id_emprendimiento")
-    private List<Emprendimiento_evento> emprendimientoEventos;
+
+    public Emprendimiento() {
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
     public int getId() {
         return id;
@@ -96,7 +106,7 @@ public class Emprendimiento {
         this.id_usuario = id_usuario;
     }
 
-    public Emprendimiento(int id, int NIT, int matricula, Date fecha_creacion, String razon_social, Ciudad id_ciudad, Usuario id_usuario) {
+    public Emprendimiento(int id, int NIT, int matricula, String nombre, Date fecha_creacion, String razon_social, Ciudad id_ciudad, Usuario id_usuario) {
         this.id = id;
         this.NIT = NIT;
         this.matricula = matricula;
@@ -104,5 +114,6 @@ public class Emprendimiento {
         this.razon_social = razon_social;
         this.id_ciudad = id_ciudad;
         this.id_usuario = id_usuario;
+        this.nombre= nombre;
     }
 }

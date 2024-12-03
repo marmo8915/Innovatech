@@ -1,0 +1,59 @@
+/* Contenedor principal */
+.table-container {
+  margin: 20px auto;
+  max-width: 100%;
+  margin-left: 4px;
+  margin-right: 4px;
+  overflow-x: auto;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Roboto", sans-serif;
+}
+
+/* Tabla estilizada */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Encabezado */
+.styled-table thead tr {
+  background-color: #4d83e0;
+  color: #fff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.styled-table th,
+.styled-table td {
+  text-align: left;
+}
+
+/* Celdas y filas */
+.styled-table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Resaltar texto */
+.styled-table td {
+  color: #555;
+}
+
+.divUsuario {
+  margin-left: auto;
+  width: 10%;
+}
