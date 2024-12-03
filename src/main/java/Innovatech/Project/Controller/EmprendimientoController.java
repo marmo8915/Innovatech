@@ -18,7 +18,7 @@ public class EmprendimientoController {
     @Autowired
     private EmpredimientoService empredimientoService;
 
-    @CrossOrigin(origins = "http://localhost:4200") // Permite solicitudes desde localhost:4200
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping
     public ResponseEntity<Emprendimiento> registrarEmprendimiento(@RequestBody Emprendimiento emprendimiento){
         Emprendimiento guardar = empredimientoService.registrarEmprendimiento(emprendimiento);

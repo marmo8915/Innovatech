@@ -18,9 +18,11 @@ export class CreateEmprendimientoComponent {
     nit: 0,
     matricula: 0,
     fecha_creacion: new Date(),
-    id_ciudad: 0,
+    id_ciudad: { id: 0 },
     razon_social: '',
-    id_usuario: 0,
+    id_usuario: {
+      id: 0,
+    },
     nombre: '',
   };
 
@@ -43,8 +45,12 @@ export class CreateEmprendimientoComponent {
 
   onSubmit(): void {
     if (this.userId) {
-      debugger;
-      this.emprend.id_usuario = parseInt(this.userId);
+      this.emprend.id_usuario = {
+        id: parseInt(this.userId),
+      };
+      this.emprend.id_ciudad = {
+        id: this.emprend.id_ciudad,
+      };
       this.emprendimientoService.createEmprendimiento(this.emprend).subscribe({
         next: (result) => {
           alert('creado');

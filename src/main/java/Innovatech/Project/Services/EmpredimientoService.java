@@ -1,12 +1,8 @@
 package Innovatech.Project.Services;
 
 import Innovatech.Project.DTO.EmprendimientoDTO;
-import Innovatech.Project.Entity.Ciudad;
 import Innovatech.Project.Entity.Emprendimiento;
-import Innovatech.Project.Entity.Usuario;
-import Innovatech.Project.Repositorio.CiudadRepository;
 import Innovatech.Project.Repositorio.EmprendimientoRepository;
-import Innovatech.Project.Repositorio.UsuarioRepository;
 import jakarta.persistence.Tuple;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,27 +19,7 @@ public class EmpredimientoService {
     @Autowired
     private EmprendimientoRepository emprendimientoRepository;
 
-    @Autowired
-    private CiudadRepository ciudadRepository;
-
-    @Autowired
-    private UsuarioRepository usuarioRepository;
-
     public Emprendimiento registrarEmprendimiento(Emprendimiento emprendimiento){
-        // Validar y asignar Ciudad
-        if (emprendimiento.getId_ciudad() != null && emprendimiento.getId_ciudad().getId() > 0) {
-            Ciudad ciudad = ciudadRepository.findById(emprendimiento.getId_ciudad().getId())
-                    .orElseThrow(() -> new RuntimeException("Ciudad no encontrada"));
-            emprendimiento.setId_ciudad(ciudad);
-        }
-
-        // Validar y asignar Usuario
-        if (emprendimiento.getId_usuario() != null && emprendimiento.getId_usuario().getId() > 0) {
-            Usuario usuario = usuarioRepository.findById(emprendimiento.getId_usuario().getId())
-                    .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
-            emprendimiento.setId_usuario(usuario);
-        }
-
         return  emprendimientoRepository.save(emprendimiento);
     }
 

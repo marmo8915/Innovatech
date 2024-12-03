@@ -27,17 +27,15 @@ public class Emprendimiento {
 
     @ManyToOne(targetEntity =  Ciudad.class)
     @JoinColumn(name = "id_ciudad")
-    @JsonIgnore
+    //@JsonIgnore
     private Ciudad id_ciudad;
 
     private String razon_social;
 
     @ManyToOne(targetEntity =  Usuario.class)
     @JoinColumn(name = "id_usuario")
-    @JsonIgnore
+    //@JsonIgnore
     private  Usuario id_usuario;
-
-
 
     public Emprendimiento() {
     }

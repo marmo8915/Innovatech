@@ -8,9 +8,9 @@ export interface emprendimiento {
   matricula: number;
   fecha_creacion: Date;
   nombre: string;
-  id_ciudad: number;
+  id_ciudad: object;
   razon_social: string;
-  id_usuario: number;
+  id_usuario: object;
 }
 
 export interface lisEmprendimientos {
