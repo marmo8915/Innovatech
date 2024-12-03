@@ -1,5 +1,6 @@
 package Innovatech.Project.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -22,6 +23,7 @@ public class Ciudad {
     private String pais;
 
     @OneToMany(targetEntity = Emprendimiento.class,fetch = FetchType.LAZY, mappedBy = "id_ciudad")
+    @JsonBackReference
     private List<Emprendimiento> emprendimientos;
 
     public Ciudad() {

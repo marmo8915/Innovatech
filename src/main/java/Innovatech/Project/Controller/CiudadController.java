@@ -1,7 +1,6 @@
 package Innovatech.Project.Controller;
 
 import Innovatech.Project.Entity.Ciudad;
-import Innovatech.Project.Entity.Rol;
 import Innovatech.Project.Services.CiudadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,6 +28,7 @@ public class CiudadController {
         return city.map(ResponseEntity::ok).orElseGet(()->ResponseEntity.notFound().build());
     }
 
+    @CrossOrigin(origins = "http://localhost:4200") // Permite solicitudes desde localhost:4200
     @GetMapping
     public  ResponseEntity<List<Ciudad>> obtenerTodos(){
         List<Ciudad> ciudad = ciudadService.consultarALLCiudad();
