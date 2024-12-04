@@ -6,3 +6,17 @@ body {
   margin: 0;
   padding: 0;
 }
+
+#ciudad {
+  box-sizing: border-box;
+  width: auto;
+  transition: border-color 0.1s, box-shadow 0.1s;
+  border: 1px solid hsl(0, 0%, 85%);
+  border-radius: 0.1875em;
+  background: rgba(0, 0, 0, 0);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06), 0 0 0 3px rgba(0, 0, 0, 0);
+  color: inherit;
+  font-size: 1.125em;
+  width: 63%;
+  margin-top: 13px;
+}

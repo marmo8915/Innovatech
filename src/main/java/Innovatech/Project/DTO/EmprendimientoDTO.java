@@ -12,6 +12,7 @@ public class EmprendimientoDTO {
     private String ciudad;
     private String usuario;
     private  String nombre;
+    private Integer id;
 
     public Integer getNit() {
         return nit;
@@ -69,7 +70,16 @@ public class EmprendimientoDTO {
         this.nombre = nombre;
     }
 
-    public EmprendimientoDTO(Integer nit, Integer matricula, String nombre, Timestamp fecha, String razonSocial, String ciudad, String usuario) {
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public EmprendimientoDTO(Integer id, Integer nit, Integer matricula, String nombre, Timestamp fecha, String razonSocial, String ciudad, String usuario) {
+        this.id = id;
         this.nit = nit;
         this.matricula = matricula;
         this.fecha = fecha;

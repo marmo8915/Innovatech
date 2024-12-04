@@ -37,12 +37,14 @@ public class EmprendimientoController {
         return  new ResponseEntity<>(reaccions, HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("{id}")
     public  ResponseEntity<String> eliminarEmprendimiento(@PathVariable int id){
         empredimientoService.eliminarEmprendimiento(id);
         return  new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PutMapping("{id}")
     public ResponseEntity<Emprendimiento> actualizarEmprendimiento(@PathVariable int id, @RequestBody Emprendimiento emprendimiento){
         Optional<Emprendimiento> update = empredimientoService.actualizarEmprendimiento(id, emprendimiento);
