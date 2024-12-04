@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { EmprendimientoListComponent } from './components/emprendimiento-list/emprendimiento-list.component';
 import { CreateEmprendimientoComponent } from './components/create-emprendimiento/create-emprendimiento.component';
 import { LoginComponent } from './components/login/login.component';
+import { EventoListComponent } from './components/evento-list/evento-list.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { LoginComponent } from './components/login/login.component';
     EmprendimientoListComponent,
     CreateEmprendimientoComponent,
     LoginComponent,
+    EventoListComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
   providers: [provideClientHydration()],

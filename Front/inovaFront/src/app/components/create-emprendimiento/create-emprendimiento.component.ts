@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { GlobalServiceService } from './../../global-service.service';
+import Swal from 'sweetalert2';
+import { Router, RouterModule } from '@angular/router';
 import {
   EmprendimientoService,
   emprendimiento,
@@ -32,7 +34,8 @@ export class CreateEmprendimientoComponent {
   constructor(
     private ciudadService: CiudadSerciveService,
     private emprendimientoService: EmprendimientoService,
-    private globalService: GlobalServiceService
+    private globalService: GlobalServiceService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -53,10 +56,20 @@ export class CreateEmprendimientoComponent {
       };
       this.emprendimientoService.createEmprendimiento(this.emprend).subscribe({
         next: (result) => {
-          alert('creado');
+          this.router.navigate(['/listEmprendimiento']);
+
+          Swal.fire({
+            title: 'Creado',
+            text: 'Emprendimiento creado con exito',
+            icon: 'info',
+          });
         },
         error: (e) => {
-          alert('error');
+          Swal.fire({
+            title: 'Error',
+            text: '',
+            icon: 'info',
+          });
         },
       });
     }

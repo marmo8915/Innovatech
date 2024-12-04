@@ -15,6 +15,7 @@
             <th scope="col">Razon Social</th>
             <th scope="col">Ciudad</th>
             <th scope="col">Fecha Creacion</th>
+            <th scope="col">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -26,6 +27,22 @@
             <th scope="row">{{ due.ciudad }}</th>
             <th scope="row">
               {{ due.fechaCreacion | date : "yyyy-MM-dd HH:mm:ss" }}
+            </th>
+            <th scope="row" class="Acciones">
+              <button
+                type="button"
+                class="edit"
+                (click)="editarEmprendimiento(due)"
+              >
+                <i class="fas fa-edit"></i>
+              </button>
+              <button
+                type="button"
+                class="delete"
+                (click)="eliminarEmprendimiento(due.id)"
+              >
+                <i class="fas fa-trash"></i>
+              </button>
             </th>
           </tr>
         </tbody>

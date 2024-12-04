@@ -60,6 +60,7 @@ public class EmpredimientoService {
         List<Tuple> tuples = emprendimientoRepository.listaEmprendimientos();
         return tuples.stream()
                 .map(tuple -> new EmprendimientoDTO(
+                        tuple.get("id", Integer.class),
                         tuple.get("nit", Integer.class),
                         tuple.get("matricula", Integer.class),
                         tuple.get("nombre", String.class),
@@ -75,6 +76,7 @@ public class EmpredimientoService {
         List<Tuple> tuples = emprendimientoRepository.listaEmprendimientosById(id);
         return tuples.stream()
                 .map(tuple -> new EmprendimientoDTO(
+                        tuple.get("id", Integer.class),
                         tuple.get("nit", Integer.class),
                         tuple.get("matricula", Integer.class),
                         tuple.get("nombre", String.class),

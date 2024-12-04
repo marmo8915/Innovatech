@@ -14,6 +14,7 @@ export interface emprendimiento {
 }
 
 export interface lisEmprendimientos {
+  id: number;
   nit: number;
   matricula: number;
   fechaCreacion: Date;
@@ -42,5 +43,13 @@ export class EmprendimientoService {
 
   createEmprendimiento(emmp: emprendimiento): Observable<emprendimiento> {
     return this.http.post<emprendimiento>(this.apiUrl, emmp);
+  }
+
+  deleteEmprendimiento(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
+  updateEmprendimiento(id: number, data: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/${id}`, data);
   }
 }
