@@ -21,7 +21,7 @@ public interface EmprendimientoRepository extends JpaRepository<Emprendimiento, 
     @Query(value =  "SELECT e.id, nit, e.nombre, matricula, fecha_creacion fecha, razon_social razonSocial, c.nombre ciudad, concat(u.nombre,' ' ,u.apellido) Usuario \n" +
             "FROM emprendimiento AS e\n" +
             "INNER JOIN ciudad AS c ON c.id = e.id_ciudad\n" +
-            "INNER JOIN usuario AS u ON u.id = e.id_usuario " +
+            "RIGHT JOIN usuario AS u ON u.id = e.id_usuario " +
             "WHERE u.id = :id", nativeQuery = true)
     List<Tuple> listaEmprendimientosById(@Param("id") int id);
 }

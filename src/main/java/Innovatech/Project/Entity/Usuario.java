@@ -35,6 +35,12 @@ public class Usuario {
     @OneToMany(targetEntity = Emprendimiento.class,fetch = FetchType.LAZY, mappedBy = "id_usuario")
     private List<Emprendimiento> emprendimientos;
 
+    @OneToMany(targetEntity = Reaccion.class,fetch = FetchType.LAZY, mappedBy = "id_usuario")
+    private List<Reaccion> reaccions;
+
+    @OneToMany(targetEntity = usuario_evento.class,fetch = FetchType.LAZY, mappedBy = "id_usuario")
+    private List<usuario_evento> usuarioEventos;
+
     public int getId() {
         return id;
     }
