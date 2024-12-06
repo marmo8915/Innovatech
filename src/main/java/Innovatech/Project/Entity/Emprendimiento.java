@@ -37,6 +37,10 @@ public class Emprendimiento {
     //@JsonIgnore
     private  Usuario id_usuario;
 
+    @OneToMany(targetEntity = Emprendimiento_evento.class,fetch = FetchType.LAZY, mappedBy = "id_emprendimiento")
+    private List<Emprendimiento_evento> emprendimientoEventos;
+
+
     public Emprendimiento() {
     }
 
